@@ -40,15 +40,10 @@ body {
 }
 
 .bg-img {
-  background: url(./cover-img.jpg) center top !important;
-  background-attachment: scroll;
-  background-size: auto;
-  background-size: cover !important;
-  background-attachment: fixed !important;
+  background: rgba(0, 0, 0, 0) url('./cover-img.jpg') repeat scroll 0% 0% / cover;
 }
 
 .input-fields {
   background-color: rgba(0, 0, 0, 0.73);
-  height: 350px;
   padding: 11.5% 0%;
 }
