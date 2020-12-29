@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: rgb(240, 248, 255);
+}
+
+.navbar {
+  background-color: #85FFBD;
+  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+  font-family: 'Redressed', cursive;
+  color: rgb(255, 255, 255);
+}
+
+
+.btn-grad {
+  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%)
+}
+
+.btn-grad {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: white;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.bg-img {
+  background: url(./cover-img.jpg) center top !important;
+  background-attachment: scroll;
+  background-size: auto;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+.input-fields {
+  background-color: rgba(0, 0, 0, 0.73);
+  height: 350px;
+  padding: 11.5% 0%;
+}
