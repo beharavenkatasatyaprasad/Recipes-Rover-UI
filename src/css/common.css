@@ -6,9 +6,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.fade-in,
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 body {
   box-sizing: border-box;
-  background-color: rgb(240, 248, 255);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 .navbar {
@@ -19,7 +28,8 @@ body {
 }
 
 
-.btn-grad {
+.btn-grad,
+.knowMore-btn {
   background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%)
 }
 
@@ -32,7 +42,8 @@ body {
   color: white;
 }
 
-.btn-grad:hover {
+.btn-grad:hover,
+.knowMore-btn:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
@@ -46,4 +57,55 @@ body {
 .input-fields {
   background-color: rgba(0, 0, 0, 0.73);
   padding: 11.5% 0%;
+}
+
+.recipe-data {
+  margin-bottom: 3%;
+}
+
+.recipe-container {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: rgb(201, 201, 201);
+  margin: 3%;
+  font-variant: small-caps;
+  border-radius: 10px;
+}
+
+.recipe-container img {
+  width: 100%;
+  height: 250px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.knowMore-btn {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 0.8px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.recipe-photo {
+  position: relative;
+}
+
+.recipe-photo span {
+  background-color: #78909cc2;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  font-variant: small-caps;
+  padding: 0.5%;
+  letter-spacing: 2px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: 0px;
+  top: 0px;
 }

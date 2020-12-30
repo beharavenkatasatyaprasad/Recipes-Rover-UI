@@ -1,5 +1,6 @@
 import Topnav from './topnav';
 import Searchfield from './searchfield';
+import CardGroup from './recipecard';
 import './css/common.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Topnav />
       <Searchfield />
+      <CardGroup />    
     </div>
   );
 }
