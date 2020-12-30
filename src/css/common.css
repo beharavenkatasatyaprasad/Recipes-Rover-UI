@@ -17,16 +17,14 @@ body {
 
 body {
   box-sizing: border-box;
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-color: #ace0f9;
 }
 
 .navbar {
-  background-color: #85FFBD;
   background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
   font-family: 'Redressed', cursive;
   color: rgb(255, 255, 255);
 }
-
 
 .btn-grad,
 .knowMore-btn {
@@ -51,16 +49,21 @@ body {
 }
 
 .bg-img {
-  background: rgba(0, 0, 0, 0) url('./cover-img.jpg') repeat scroll 0% 0% / cover;
+  background: rgba(0, 0, 0, 0) url('./cover-img.jpg') repeat 0% 0% / cover;
+  height: 200px;
 }
 
 .input-fields {
   background-color: rgba(0, 0, 0, 0.73);
-  padding: 11.5% 0%;
+  padding: 80.5px 0%;
 }
 
 .recipe-data {
   margin-bottom: 3%;
+}
+
+.container-fluid {
+  align-items: center;
 }
 
 .recipe-container {
@@ -77,6 +80,7 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
 
 .knowMore-btn {
   text-align: center;

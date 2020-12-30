@@ -50,7 +50,6 @@ class recipe extends React.Component {
       );
     } else {
       const cards = recipesArray.map((item)=>{
-        console.log(item)
         // let calories = item.calories
         return (
             <div className="fade-in my-2 recipe-card col-sm-3" key={item._id}>
@@ -58,14 +57,12 @@ class recipe extends React.Component {
                 <div className="recipe-container col-sm-12 p-0 m-0">
                     <div className="recipe-photo col-sm-12 p-0 m-0">
                     <img src={item.image} alt={item._id}/>
-                    <span>{item.label}</span>
+                    <span className="recipeName">{item.label}</span>
                     </div>
-                    {/* <div className="recipe-name col-sm-12 p-0 m-0 text-center">
-                          
-  
-                    </div> */}
                     <div className="knowMore col-sm-12 p-0">
-                        <button className="btn knowMore-btn btn-md btn-block" type="button">
+                        <button className="btn knowMore-btn btn-md btn-block" type="button" onClick={{
+
+                        }}>
                             Know More
                         </button>
                     </div>
@@ -75,7 +72,7 @@ class recipe extends React.Component {
         );
       })
       return(
-        <div className="container-fluid m-1 row">
+        <div className="container-fluid row">
             {cards}
          </div>
       );      
