@@ -1,6 +1,8 @@
 import Topnav from './topnav';
 import Searchfield from './searchfield';
 import CardGroup from './recipecard';
+import PublishModal from './publishmodal';
+import PublishBtn from './publishtab-btn';
 import './css/common.css';
 
 function App() {
@@ -8,7 +10,9 @@ function App() {
     <div className="App">
       <Topnav />
       <Searchfield />
-      <CardGroup />    
+      <CardGroup />
+      <PublishModal />
+      <PublishBtn />
     </div>
   );
 }

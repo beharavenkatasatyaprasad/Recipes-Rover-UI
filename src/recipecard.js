@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { SemipolarLoading } from 'react-loadingg';
 
 class recipe extends React.Component {
@@ -50,6 +51,7 @@ class recipe extends React.Component {
       );
     } else {
       const cards = recipesArray.map((item)=>{
+        console.log(item)
         // let calories = item.calories
         return (
             <div className="fade-in my-2 recipe-card col-sm-3" key={item._id}>
@@ -57,12 +59,10 @@ class recipe extends React.Component {
                 <div className="recipe-container col-sm-12 p-0 m-0">
                     <div className="recipe-photo col-sm-12 p-0 m-0">
                     <img src={item.image} alt={item._id}/>
-                    <span className="recipeName">{item.label}</span>
+                    <span>{item.label}</span>
                     </div>
                     <div className="knowMore col-sm-12 p-0">
-                        <button className="btn knowMore-btn btn-md btn-block" type="button" onClick={{
-
-                        }}>
+                        <button className="btn knowMore-btn btn-md btn-block" type="button">
                             Know More
                         </button>
                     </div>

@@ -34,6 +34,7 @@ body {
 .btn-grad {
   text-align: center;
   transition: 0.5s;
+  font-size: 135%;
   background-size: 200% auto;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -55,7 +56,7 @@ body {
 
 .input-fields {
   background-color: rgba(0, 0, 0, 0.73);
-  padding: 80.5px 0%;
+  padding: 76.8px 0%;
 }
 
 .recipe-data {
@@ -87,7 +88,7 @@ body {
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  font-variant: small-caps;
+  font-size: 130%;
   letter-spacing: 0.8px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -112,4 +113,80 @@ body {
   text-align: center;
   left: 0px;
   top: 0px;
+}
+
+
+.publish-btn {
+  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.publish-btn {
+  position: fixed;
+  rotate: 90deg;
+  top: 142px;
+  left: -60px;
+  z-index: 999;
+  transition: 0.5s;
+  background-size: 200% auto;
+  font-family: 'Redressed', cursive;
+  font-size: 130%;
+  color: white;
+  display: block;
+}
+
+.publish-btn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.submit-btn{
+  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+}
+
+.submit-btn {
+  font-family: 'Redressed', cursive;
+  font-size: 130%;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal-header{
+  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+  border-radius: 0px !important;
+  font-size: 2rem;
+}
+
+.modal-header h3{
+  font-family: 'Redressed', cursive;
+  color: rgb(255, 255, 255);
+}
+
+.btn{
+  font-family: 'Redressed', cursive;
+  
+}
+
+@media(max-width:600px){
+  .publish-btn{
+    bottom: 0px;
+    top: inherit;
+    left: -2px;
+    rotate: 0deg;
+    font-size: 100%;
+    letter-spacing: 0.5px;
+  }
 }
