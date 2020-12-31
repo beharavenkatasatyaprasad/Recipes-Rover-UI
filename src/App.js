@@ -11,8 +11,8 @@ function App() {
       <Topnav />
       <Searchfield />
       <CardGroup />
-      <PublishModal />
       <PublishBtn />
+      <PublishModal />
     </div>
   );
 }

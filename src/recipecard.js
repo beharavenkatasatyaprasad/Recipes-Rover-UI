@@ -54,7 +54,7 @@ class recipe extends React.Component {
         console.log(item)
         // let calories = item.calories
         return (
-            <div className="fade-in my-2 recipe-card col-sm-3" key={item._id}>
+            <div className="fade-in my-1 recipe-card col-sm-12 col-md-6 col-lg-3" key={item._id}>
               <div className="col-sm-12 recipe-data p-0">
                 <div className="recipe-container col-sm-12 p-0 m-0">
                     <div className="recipe-photo col-sm-12 p-0 m-0">
@@ -72,8 +72,10 @@ class recipe extends React.Component {
         );
       })
       return(
-        <div className="container-fluid row">
+        <div className="container-fluid" style={{paddingLeft: '5px', paddingRight: '5px'}}>
+          <div className="row p-0 m-0">
             {cards}
+          </div>
          </div>
       );      
     }

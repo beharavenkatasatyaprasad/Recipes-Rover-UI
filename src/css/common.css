@@ -22,19 +22,22 @@ body {
 
 .navbar {
   background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
-  font-family: 'Redressed', cursive;
   color: rgb(255, 255, 255);
 }
 
+.navbar h1{
+  font-family: 'Redressed', cursive !important;
+}
 .btn-grad,
 .knowMore-btn {
   background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%)
 }
 
+
 .btn-grad {
   text-align: center;
   transition: 0.5s;
-  font-size: 135%;
+  letter-spacing: normal;
   background-size: 200% auto;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -46,6 +49,7 @@ body {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
+  letter-spacing: 1px;
   text-decoration: none;
 }
 
