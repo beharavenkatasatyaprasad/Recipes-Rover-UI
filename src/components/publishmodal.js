@@ -23,19 +23,19 @@ function PublishModal(){
                     <div className="modal-body">
                         <div>
                             <div className="form-group">
-                                <label for="recipelabel">Recipe Label</label>
+                                <label htmlFor="recipelabel">Recipe Label</label>
                                 <input type="text" className="form-control" name="recipelabel" ref={register({ required:
                                     true })} />
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
-                                    <label for="ingredients">ingredients</label>
+                                    <label htmlFor="ingredients">ingredients</label>
                                     <textarea type="text" className="form-control"
                                         placeholder="include comma (',') between each ingredient. (example: Tomatos 5, Potatoes 2, Garam Masala ...)"
                                         name="ingredients" row="2" ref={register({ required: true })}></textarea>
                                 </div>
                                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
-                                    <label for="instructions">Instructions</label>
+                                    <label htmlFor="instructions">Instructions</label>
                                     <textarea type="text"
                                         placeholder="include comma (',') between each step. (example: cut all the vegetables, In a small bowl combine sugar, ...)"
                                         className="form-control" name="instructions" row="2" ref={register({ required:
@@ -44,22 +44,22 @@ function PublishModal(){
                             </div>
                             <div className="row">
                                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
-                                    <label className="form-label" for="image">Image Url</label>
+                                    <label className="form-label" htmlFor="image">Image Url</label>
                                     <input type="text" className="form-control" name="image" ref={register({ required:
                                         true })} />
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
-                                    <label for="publisher">Publisher Name</label>
+                                    <label htmlFor="publisher">Publisher Name</label>
                                     <input type="text" className="form-control" name="publisher" ref={register({
                                         required: true })} />
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
-                                    <label for="calories">Calories</label>
+                                    <label htmlFor="calories">Calories</label>
                                     <input type="text" className="form-control" name="calories" ref={register({
                                         required: true })} />
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
-                                    <label for="serves">Serves</label>
+                                    <label htmlFor="serves">Serves</label>
                                     <input type="text" className="form-control" name="serves" ref={register({ required:
                                         true })} />
                                 </div>

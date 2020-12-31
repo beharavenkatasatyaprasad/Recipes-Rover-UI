@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 
 * {
@@ -38,7 +38,7 @@ body {
   text-align: center;
   transition: 0.5s;
   letter-spacing: normal;
-  font-family: cursive;
+  font-family: 'Redressed',cursive;
   background-size: 200% auto;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -50,6 +50,7 @@ body {
   background-position: right center;
   color: #fff;
   text-decoration: none;
+  padding: 4px;
 }
 
 .bg-img {
@@ -74,8 +75,13 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: rgb(201, 201, 201);
   margin: 3%;
-  font-variant: small-caps;
   border-radius: 10px;
+  transition: 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.recipe-container:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  
 }
 
 .recipe-container img {
@@ -91,7 +97,8 @@ body {
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  font-size: 130%;
+  font-size: 120%;
+  font-family: 'Redressed', cursive;
   letter-spacing: 0.8px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -104,19 +111,21 @@ body {
 .recipe-photo span {
   background-color: #78909cc2;
   color: rgb(0, 0, 0);
+  font-family: 'Carter One', cursive;
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   position: relative;
-  font-variant: small-caps;
+  text-transform: capitalize;
   padding: 0.5%;
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
   overflow: hidden;
   position: absolute;
   text-align: center;
   left: 0px;
   top: 0px;
 }
+
 
 
 .publish-btn {

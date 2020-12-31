@@ -1,9 +1,11 @@
-import Topnav from './topnav';
-import Searchfield from './searchfield';
-import CardGroup from './recipecard';
-import PublishModal from './publishmodal';
-import PublishBtn from './publishtab-btn';
-import './css/common.css';
+import React from "react";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+import Topnav from "./components/topnav";
+import Searchfield from "./components/searchfield";
+import CardGroup from "./components/recipecard";
+import PublishModal from "./components/publishmodal";
+import PublishBtn from "./components/publishtab-btn";
+import "./css/common.css";
 
 function App() {
   return (
