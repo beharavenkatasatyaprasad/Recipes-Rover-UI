@@ -52,7 +52,6 @@ class recipe extends React.Component {
     } else {
       const cards = recipesArray.map((item)=>{
         console.log(item)
-        // let calories = item.calories
         return (
             <div className="fade-in my-1 recipe-card col-sm-12 col-md-6 col-lg-3" key={item._id}>
               <div className="col-sm-12 recipe-data p-0">

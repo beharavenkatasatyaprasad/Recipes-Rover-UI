@@ -38,6 +38,7 @@ body {
   text-align: center;
   transition: 0.5s;
   letter-spacing: normal;
+  font-family: cursive;
   background-size: 200% auto;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -47,9 +48,7 @@ body {
 .btn-grad:hover,
 .knowMore-btn:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
-  letter-spacing: 1px;
   text-decoration: none;
 }
 
@@ -179,10 +178,6 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.btn{
-  font-family: 'Redressed', cursive;
-  
-}
 
 @media(max-width:600px){
   .publish-btn{
