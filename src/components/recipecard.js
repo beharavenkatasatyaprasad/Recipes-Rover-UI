@@ -14,7 +14,7 @@ class recipe extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://recipesrover.herokuapp.com/recipes")
       .then((res) => res.json())
       .then(
         (result) => {

@@ -15,7 +15,7 @@ class Recipe extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.id;
-    fetch(`http://localhost:5000/recipes/${id}`)
+    fetch(`https://recipesrover.herokuapp.com/recipes/${id}`)
       .then((res) => res.json())
       .then(
         (result) => {

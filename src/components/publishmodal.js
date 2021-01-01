@@ -185,7 +185,7 @@ async function publish(
     timetaken: timetaken
   };
   let conn_status = true;
-  let data = await fetch("http://localhost:5000/publish", {
+  let data = await fetch("https://recipesrover.herokuapp.com/publish", {
     method: "POST",
     body: JSON.stringify(formdata),
     headers: {
