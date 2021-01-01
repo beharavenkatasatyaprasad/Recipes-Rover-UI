@@ -27,7 +27,7 @@ body {
     #49a09d 51%,
     #5f2c82 100%
   );
-  color: rgb(255, 255, 255);
+  color:#f0f8ff;
 }
 
 .navbar h1 {
@@ -67,6 +67,7 @@ body {
   background: rgba(0, 0, 0, 0) url("./cover-img.jpg") repeat 0% 0% / cover;
   height: 200px;
 }
+
 
 .input-fields {
   background-color: rgba(0, 0, 0, 0.73);
@@ -132,7 +133,7 @@ body {
 
 .recipe-photo span {
   background-color: #78909cc2;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: "Carter One", cursive;
   width: 100%;
   border-top-left-radius: 5px;

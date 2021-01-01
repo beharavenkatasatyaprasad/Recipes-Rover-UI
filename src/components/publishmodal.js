@@ -13,11 +13,18 @@ function Publish() {
       data.serves,
       data.ingredients,
       data.instructions,
-      data.publisher
+      data.publisher,
+      data.Difficulty,
+      data.Cost,
+      data.onepotmeal,
+      data.Occasion,
+      data.taste,
+      data.Meal,
+      data.timetaken
     );
   };
   return (
-    <div className="container bg-light card p-2 my-4">
+    <div className="container bg-light card p-2 mt-2">
     <div className="row recipeHeader">
         <div className="col">
             <h3>Publish Your Recipe</h3>
@@ -49,8 +56,8 @@ function Publish() {
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="Difficulty">Difficulty{aterisk}</label>
-                    <select class="custom-select" name='Difficulty' ref={register({ required: true })}>
-                        <option selected>select one</option>
+                    <select className="custom-select" name='Difficulty' ref={register({ required: true })}>
+                        <option defaultValue>select one</option>
                         <option value="easy">easy</option>
                         <option value="moderate">moderate</option>
                         <option value="difficult">difficult</option>
@@ -58,17 +65,17 @@ function Publish() {
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="Cost">Cost{aterisk}</label>
-                    <select class="custom-select" name='Difficulty' ref={register({ required: true })}>
-                        <option selected>select one</option>
-                        <option value="easy">easy</option>
+                    <select className="custom-select" name='Cost' ref={register({ required: true })}>
+                        <option defaultValue>select one</option>
+                        <option value="inexpensive">inexpensive</option>
                         <option value="moderate">moderate</option>
-                        <option value="difficult">difficult</option>
+                        <option value="expensive">expensive</option>
                     </select>
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="onepotmeal">One Pot Meal{aterisk}</label>
-                    <select class="custom-select" name='onepotmeal' ref={register({ required: true })}>
-                        <option selected>select one</option>
+                    <select className="custom-select" name='onepotmeal' ref={register({ required: true })}>
+                        <option defaultValue>select one</option>
                         <option value="yes">yes</option>
                         <option value="no">no</option>
                     </select>
@@ -87,8 +94,8 @@ function Publish() {
             <div className="row">
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="Meal">Meal{aterisk}</label>
-                    <select class="custom-select" name='Meal' ref={register({ required: true })}>
-                        <option selected>select one</option>
+                    <select className="custom-select" name='Meal' ref={register({ required: true })}>
+                        <option defaultValue>select one</option>
                         <option value="breakfast">breakfast</option>
                         <option value="lunch">lunch</option>
                         <option value="snacks">snacks</option>
@@ -104,13 +111,13 @@ function Publish() {
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="ingredients">ingredients{aterisk}</label>
                     <textarea type="text" className="form-control"
-                        placeholder="include comma (',') between each ingredient. (example: Tomatos 5, Potatoes 2, Garam Masala ...)"
+                        placeholder="include hyphen (-) between each ingredient. (example: Tomatos 5, Potatoes 2, Garam Masala ...)"
                         name="ingredients" row="3" ref={register({ required: true })}></textarea>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="instructions">Preparation{aterisk}</label>
                     <textarea type="text"
-                        placeholder="include comma (',') between each step. (example: cut all the vegetables, In a small bowl combine sugar, ...)"
+                        placeholder="include hyphen (-) between each step. (example: - cut all the vegetables - In a small bowl combine sugar, ...)"
                         className="form-control" name="instructions" row="3" ref={register({ required: true
                         })}></textarea>
                 </div>
@@ -137,33 +144,45 @@ function Publish() {
             </div>            
             </div>
         </div>
-        <div className="modal-footer">
-            <button name="publish__" type="submit" className="btn m-0 submit-btn btn-block">
+        <button name="publish__" type="submit" className="btn m-0 submit-btn btn-block">
                 Publish
-            </button>
-        </div>
+        </button>   
     </form>
 </div>
   );
 }
 
 async function publish(
-  label,
-  image,
-  calories,
-  serves,
-  ingredients,
-  instructions,
-  publisher
+    recipelabel,
+    image,
+   calories,
+    serves,
+    ingredients,
+    instructions,
+    publisher,
+    Difficulty,
+    Cost,
+    onepotmeal,
+    Occasion,
+    taste,
+    Meal,
+    timetaken
 ) {
   let formdata = {
     publisher: publisher,
     image: image,
-    label: label,
+    label: recipelabel,
     ingredients: ingredients,
     instructions: instructions,
     calories: calories,
     serves: serves,
+    difficulty: Difficulty,
+    cost: Cost,
+    onepotmeal: onepotmeal,
+    occasion: Occasion,
+    tastetexture: taste,
+    meal: Meal,
+    timetaken: timetaken
   };
   let conn_status = true;
   let data = await fetch("http://localhost:5000/publish", {
@@ -181,7 +200,11 @@ async function publish(
     alert("something went wrong, Please tryagain");
     return;
   }
-  alert(label + " successfully published");
+  alert(recipelabel + " successfully published");
+//   let result = await data.json()
+//   let endpoint = `/recipe/${result.message}`
+//   return <Redirect to={endpoint} />
+
 }
 
 export default Publish;

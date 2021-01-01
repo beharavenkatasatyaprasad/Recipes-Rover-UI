@@ -77,7 +77,7 @@ class recipe extends React.Component {
           className="container-fluid"
           style={{ paddingLeft: "5px", paddingRight: "5px" }}
         >
-          <div className="row p-0 m-0">{cards}</div>
+          <div className="row p-0 m-0 mt-3 justify-content-center">{cards}</div>
         </div>
       );
     }
