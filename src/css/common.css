@@ -17,7 +17,7 @@ body {
 
 body {
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: hsl(208, 100%, 97%);
 }
 
 .navbar {
