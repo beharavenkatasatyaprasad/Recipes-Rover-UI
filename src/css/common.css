@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins');
+@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .fade-in,
@@ -17,28 +17,38 @@ body {
 
 body {
   box-sizing: border-box;
-  background-color: #ace0f9;
+  background-color: #ffffff;
 }
 
 .navbar {
-  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+  background-image: linear-gradient(
+    to right,
+    #5f2c82 0%,
+    #49a09d 51%,
+    #5f2c82 100%
+  );
   color: rgb(255, 255, 255);
 }
 
-.navbar h1{
-  font-family: 'Redressed', cursive !important;
+.navbar h1 {
+  font-family: "Redressed", cursive !important;
 }
 .btn-grad,
-.knowMore-btn {
-  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%)
+.knowMore-btn,
+.btn-footer {
+  background-image: linear-gradient(
+    to right,
+    #5f2c82 0%,
+    #49a09d 51%,
+    #5f2c82 100%
+  );
 }
-
 
 .btn-grad {
   text-align: center;
   transition: 0.5s;
   letter-spacing: normal;
-  font-family: 'Redressed',cursive;
+  font-family: "Redressed", cursive;
   background-size: 200% auto;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -46,15 +56,15 @@ body {
 }
 
 .btn-grad:hover,
-.knowMore-btn:hover {
+.knowMore-btn:hover,
+.btn-footer:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
-  padding: 4px;
 }
 
 .bg-img {
-  background: rgba(0, 0, 0, 0) url('./cover-img.jpg') repeat 0% 0% / cover;
+  background: rgba(0, 0, 0, 0) url("./cover-img.jpg") repeat 0% 0% / cover;
   height: 200px;
 }
 
@@ -76,12 +86,14 @@ body {
   background-color: rgb(201, 201, 201);
   margin: 3%;
   border-radius: 10px;
-  transition: 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-.recipe-container:hover{
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  
+.publishform label{
+  color: rgb(0, 16, 156);
+  margin-bottom: .1px;
+}
+.recipe-container:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .recipe-container img {
@@ -91,6 +103,16 @@ body {
   border-top-right-radius: 5px;
 }
 
+.btn-footer{
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  font-family: "Redressed", cursive;
+  letter-spacing: 0.8px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
 .knowMore-btn {
   text-align: center;
@@ -98,7 +120,7 @@ body {
   background-size: 200% auto;
   color: white;
   font-size: 120%;
-  font-family: 'Redressed', cursive;
+  font-family: "Redressed", cursive;
   letter-spacing: 0.8px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -111,7 +133,7 @@ body {
 .recipe-photo span {
   background-color: #78909cc2;
   color: rgb(0, 0, 0);
-  font-family: 'Carter One', cursive;
+  font-family: "Carter One", cursive;
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -126,10 +148,13 @@ body {
   top: 0px;
 }
 
-
-
 .publish-btn {
-  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+  background-image: linear-gradient(
+    to right,
+    #5f2c82 0%,
+    #49a09d 51%,
+    #5f2c82 100%
+  );
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
@@ -142,7 +167,7 @@ body {
   z-index: 999;
   transition: 0.5s;
   background-size: 200% auto;
-  font-family: 'Redressed', cursive;
+  font-family: "Redressed", cursive;
   font-size: 130%;
   color: white;
   display: block;
@@ -154,13 +179,20 @@ body {
   color: #fff;
   text-decoration: none;
 }
-
-.submit-btn{
-  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
+.asterisk{
+  color: hsl(0, 100%, 50%);
+}
+.submit-btn {
+  background-image: linear-gradient(
+    to right,
+    #5f2c82 0%,
+    #49a09d 51%,
+    #5f2c82 100%
+  );
 }
 
 .submit-btn {
-  font-family: 'Redressed', cursive;
+  font-family: "Redressed", cursive;
   font-size: 130%;
   transition: 0.5s;
   background-size: 200% auto;
@@ -176,20 +208,60 @@ body {
   text-decoration: none;
 }
 
-.modal-header{
-  background-image: linear-gradient(to right, #5f2c82 0%, #49a09d 51%, #5f2c82 100%);
-  border-radius: 0px !important;
-  font-size: 2rem;
+
+.side-content p {
+  margin-bottom: 15px;
+  font-size: 105%;
+  letter-spacing: 0.5px;
 }
 
-.modal-header h3{
-  font-family: 'Redressed', cursive;
-  color: rgb(255, 255, 255);
+.recipeHeader h3 {
+  font-family: "Redressed", cursive !important;
+  color: rgb(0, 16, 156);
+}
+
+.side-content span {
+  color: rgb(0, 16, 156);
+}
+
+.side-content-img img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: auto;
 }
 
 
-@media(max-width:600px){
-  .publish-btn{
+.header{
+  color:rgb(0, 16, 156) ;
+}
+
+ol {
+  counter-reset: item;
+  padding: 5px;
+}
+
+ol li {
+  display: block;
+  text-align: jus;
+  letter-spacing: 0.7px;
+  padding-bottom: 10px;
+}
+
+ol li:last-child {
+  padding-bottom: 0px;
+}
+
+ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: rgb(0, 16, 156);
+}
+
+@media (max-width: 600px) {
+  .publish-btn {
     bottom: 0px;
     top: inherit;
     left: -2px;

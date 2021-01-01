@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { PassThrouthLoading } from "react-loadingg";
 
@@ -58,13 +58,13 @@ class recipe extends React.Component {
                   <span>{item.label}</span>
                 </div>
                 <div className="knowMore col-sm-12 p-0">
-                  <button
-                    // to={`/recipes/:${item._id}`}
+                  <Link
+                    to={`/recipe/${item._id}`}
                     className="btn knowMore-btn btn-md btn-block"
                     type="button"
                   >
                     Know More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
