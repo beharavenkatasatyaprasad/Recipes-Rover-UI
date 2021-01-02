@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import Deletebtn from "./deletebtn";
 import { PassThrouthLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
 
@@ -35,7 +36,8 @@ class Recipe extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, Thisrecipe } = this.state;
+    const { error, isLoaded, Thisrecipe  } = this.state;
+
     if (error) {
       return <div className="col text-center">Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -44,7 +46,9 @@ class Recipe extends React.Component {
           <PassThrouthLoading />
         </div>
       );
-    } else {
+    }else{
+      localStorage.setItem("thisrecipeName", Thisrecipe.result.label); 
+      localStorage.setItem("thisrecipeId", Thisrecipe.result._id); 
       let ingreds = Thisrecipe.result.ingredients
       let steps = Thisrecipe.result.instructions
       const ingredslist = ingreds.map((item,pos) => {
@@ -65,10 +69,8 @@ class Recipe extends React.Component {
               <h3>{Thisrecipe.result.label}</h3>
             </div>
             <div className="col home-button">
-              <button className="btn mx-1 btn-sm float-right btn-info" to="/">
-                <i className="fa fa-trash"></i>
-              </button>
-              <button className="btn mx-1 btn-sm float-right btn-info" to="/">
+              <Deletebtn />
+              <button className="btn mx-1 btn-sm float-right btn-info" >
                 <i className="fa fa-edit"></i>
               </button>
               <Link className="btn mx-1 btn-sm float-right btn-info" to="/">
@@ -140,12 +142,13 @@ class Recipe extends React.Component {
               </ol>
           </div>
           </div>
-            <span className="text-right"><small>Published by : {Thisrecipe.result.publisher} </small></span>
+            <span className="text-right"><small>Published by : <span className='header'>{Thisrecipe.result.publisher}</span></small></span>
         </div>
       </>
       );
     }
   }
 }
+
 
 export default withRouter(Recipe);

@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Topnav from "./components/topnav";
 import Searchfield from "./components/searchfield";
 import CardGroup from "./components/recipecard";
+import Recipedeleted from "./components/deleted";
 import Publish from "./components/publishmodal";
 import PublishBtn from "./components/publishtab-btn";
 import "./css/common.css";
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/recipe/:id" >
           <Recipe />
+        </Route>
+        <Route path="/deleteRecipe" >
+          <Recipedeleted />
         </Route>
         <Route path="/publish">
           <Publish />
