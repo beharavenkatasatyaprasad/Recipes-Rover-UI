@@ -37,7 +37,6 @@ class Recipe extends React.Component {
 
   render() {
     const { error, isLoaded, Thisrecipe  } = this.state;
-
     if (error) {
       return <div className="col text-center">Error: {error.message}</div>;
     } else if (!isLoaded) {

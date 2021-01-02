@@ -1,27 +1,51 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure()
 
 function Publish() {
   const aterisk = <span className='asterisk'>*</span>
   const { register, handleSubmit } = useForm(); // initialize the hook
   const onSubmit = (data) => {
-    publish(
-      data.recipelabel,
-      data.image,
-      data.calories,
-      data.serves,
-      data.ingredients,
-      data.instructions,
-      data.publisher,
-      data.Difficulty,
-      data.Cost,
-      data.onepotmeal,
-      data.Occasion,
-      data.taste,
-      data.Meal,
-      data.timetaken
-    );
+    if(
+        !data.recipelabel ||
+        !data.image||
+        !data.calories||
+        !data.serves||
+        !data.ingredients||
+        !data.instructions||
+        !data.publisher||
+        !data.Difficulty||
+        !data.Cost||
+        !data.onepotmeal||
+        !data.Occasion||
+        !data.taste||
+        !data.Meal||
+        !data.timetaken){
+            toast.info("Fill all mandatory fields..",{
+                position: toast.POSITION.TOP_RIGHT
+            });
+        }else{
+            publish(
+              data.recipelabel,
+              data.image,
+              data.calories,
+              data.serves,
+              data.ingredients,
+              data.instructions,
+              data.publisher,
+              data.Difficulty,
+              data.Cost,
+              data.onepotmeal,
+              data.Occasion,
+              data.taste,
+              data.Meal,
+              data.timetaken
+            );
+        }
   };
   return (
     <div className="container bg-light card p-2 mt-2">
@@ -51,12 +75,11 @@ function Publish() {
             <div className='row'>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="recipelabel">Recipe Name{aterisk}</label>
-                    <input type="text" className="form-control" name="recipelabel" ref={register({ required: true
-                        })} />
+                    <input type="text" className="form-control" name="recipelabel" ref={register()} />
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="Difficulty">Difficulty{aterisk}</label>
-                    <select className="custom-select" name='Difficulty' ref={register({ required: true })}>
+                    <select className="custom-select" name='Difficulty' ref={register()}>
                         <option defaultValue>select one</option>
                         <option value="easy">easy</option>
                         <option value="moderate">moderate</option>
@@ -65,7 +88,7 @@ function Publish() {
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="Cost">Cost{aterisk}</label>
-                    <select className="custom-select" name='Cost' ref={register({ required: true })}>
+                    <select className="custom-select" name='Cost' ref={register()}>
                         <option defaultValue>select one</option>
                         <option value="inexpensive">inexpensive</option>
                         <option value="moderate">moderate</option>
@@ -74,7 +97,7 @@ function Publish() {
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="onepotmeal">One Pot Meal{aterisk}</label>
-                    <select className="custom-select" name='onepotmeal' ref={register({ required: true })}>
+                    <select className="custom-select" name='onepotmeal' ref={register()}>
                         <option defaultValue>select one</option>
                         <option value="yes">yes</option>
                         <option value="no">no</option>
@@ -84,17 +107,17 @@ function Publish() {
             <div className="row">
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="taste">Taste & Texture{aterisk}</label>
-                    <input type="text" className="form-control" placeholder='buttery, salty, sweet' name="taste" ref={register({ required: true })} />
+                    <input type="text" className="form-control" placeholder='buttery, salty, sweet' name="taste" ref={register()} />
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="Occasion">Occasion{aterisk}</label>
-                    <input type="text" className="form-control" name="Occasion" placeholder='Casual Dinner Party, Cooking for a date, game day' ref={register({ required: true })} />
+                    <input type="text" className="form-control" name="Occasion" placeholder='Casual Dinner Party, Cooking for a date, game day' ref={register()} />
                 </div>
             </div>
             <div className="row">
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="Meal">Meal{aterisk}</label>
-                    <select className="custom-select" name='Meal' ref={register({ required: true })}>
+                    <select className="custom-select" name='Meal' ref={register()}>
                         <option defaultValue>select one</option>
                         <option value="breakfast">breakfast</option>
                         <option value="lunch">lunch</option>
@@ -104,7 +127,7 @@ function Publish() {
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="timetaken">Time taken{aterisk}</label>
-                    <input type="text" className="form-control" name="timetaken" placeholder='1 hour' ref={register({ required: true })} />
+                    <input type="text" className="form-control" name="timetaken" placeholder='1 hour' ref={register()} />
                 </div>
             </div>
             <div className="row">
@@ -112,14 +135,13 @@ function Publish() {
                     <label htmlFor="ingredients">ingredients{aterisk}</label>
                     <textarea type="text" className="form-control"
                         placeholder="include hyphen (-) between each ingredient. (example: Tomatos 5, Potatoes 2, Garam Masala ...)"
-                        name="ingredients" row="3" ref={register({ required: true })}></textarea>
+                        name="ingredients" row="3" ref={register()}></textarea>
                 </div>
                 <div className="col-sm-12 col-md-12 col-lg-6 form-group">
                     <label htmlFor="instructions">Preparation{aterisk}</label>
                     <textarea type="text"
                         placeholder="include hyphen (-) between each step. (example: - cut all the vegetables - In a small bowl combine sugar, ...)"
-                        className="form-control" name="instructions" row="3" ref={register({ required: true
-                        })}></textarea>
+                        className="form-control" name="instructions" row="3" ref={register()}></textarea>
                 </div>
             </div>
             <div className="row">
@@ -127,20 +149,19 @@ function Publish() {
                     <label className="form-label" htmlFor="image">
                         Image Url{aterisk}
                     </label>
-                    <input type="text" className="form-control" name="image" ref={register({ required: true })} />
+                    <input type="text" className="form-control" name="image" ref={register()} />
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="calories">Calories{aterisk}</label>
-                    <input type="text" className="form-control" name="calories" ref={register({ required: true,
-                        })} />
+                    <input type="text" className="form-control" name="calories" ref={register()} />
                 </div>
                 <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                     <label htmlFor="serves">Serves{aterisk}</label>
-                    <input type="text" className="form-control" name="serves" ref={register({ required: true })} />
+                    <input type="text" className="form-control" name="serves" ref={register()} />
                 </div>
             <div className="col-sm-12 col-md-6 col-lg-3 form-group">
                 <label htmlFor="publisher">Publisher Name{aterisk}</label>
-                <input type="text" className="form-control" name="publisher" ref={register({ required: true,})} />           
+                <input type="text" className="form-control" name="publisher" ref={register()} />           
             </div>            
             </div>
         </div>
@@ -185,6 +206,9 @@ async function publish(
     timetaken: timetaken
   };
   let conn_status = true;
+  toast.info("Please wait..",{
+    position: toast.POSITION.TOP_RIGHT
+    });
   let data = await fetch("https://recipesrover.herokuapp.com/publish", {
     method: "POST",
     body: JSON.stringify(formdata),
@@ -192,19 +216,20 @@ async function publish(
       "Content-Type": "application/json",
     },
   }).catch((error) => {
-    alert(error);
+    toast.danger(error)
     conn_status = false;
   });
   if (!conn_status) return;
   if (data.status !== 201) {
-    alert("something went wrong, Please tryagain");
+    toast.error("something went wrong, Please tryagain",{
+        position: toast.POSITION.TOP_RIGHT
+    });
     return;
   }
-  alert(recipelabel + " successfully published");
-//   let result = await data.json()
-//   let endpoint = `/recipe/${result.message}`
-//   return <Redirect to={endpoint} />
-
+//   alert();
+  toast.success(recipelabel + " successfully published",{
+    position: toast.POSITION.TOP_RIGHT
+})
 }
 
 export default Publish;

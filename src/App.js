@@ -5,10 +5,14 @@ import Topnav from "./components/topnav";
 import Searchfield from "./components/searchfield";
 import CardGroup from "./components/recipecard";
 import Recipedeleted from "./components/deleted";
+// import Editrecipe from "./components/editrecipe";
+
+
 import Publish from "./components/publishmodal";
 import PublishBtn from "./components/publishtab-btn";
-import "./css/common.css";
+import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";
 import Recipe from "./components/recipe";
+import "./css/common.css";
 
 function App() {
   return (
@@ -18,6 +22,7 @@ function App() {
           <Searchfield />
           <CardGroup />
           <PublishBtn />
+          <ScrollUpButton />
         </Route>
         <Route path="/recipe/:id" >
           <Recipe />
@@ -28,6 +33,9 @@ function App() {
         <Route path="/publish">
           <Publish />
         </Route>
+        {/* <Route path="/editrecipe">
+          <Editrecipe />
+        </Route> */}
       </BrowserRouter>
   );
 }
