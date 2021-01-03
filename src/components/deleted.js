@@ -16,7 +16,7 @@ function deleterecipe() {
   })
   const recipename = localStorage.getItem("thisrecipeName");
   return (
-<div className="container bg-light col-sm-8 p-0" style={{marginTop:'4.5rem'}}>
+<div className="container bg-light col-sm-8 p-0" style={{marginTop:'11rem'}}>
     <div className="card">
     <div className="recipeHeader">
      <Link className="btn mx-1 btn-sm m-2 float-right btn-info" to="/">

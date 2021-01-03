@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 
 function editrecipe() {
   return (
-<div className="container bg-light col-sm-8 p-0" style={{marginTop:'4.5rem'}}>
+<div className="container bg-light col-sm-8 p-0" style={{marginTop:'11rem'}}>
     <div className="card">
     <div className="recipeHeader editrecipe">
-
   </div>
   <div className="row">
     <div className="col-sm-10 pt-1 mt-3 mb-2 text-center col-md-6 col-lg-6 side-content">
