@@ -5,7 +5,7 @@ import Topnav from "./components/topnav";
 import Searchfield from "./components/searchfield";
 import CardGroup from "./components/recipecard";
 import Recipedeleted from "./components/deleted";
-// import Editrecipe from "./components/editrecipe";
+import Editrecipe from "./components/editinprogress";
 
 
 import Publish from "./components/publishmodal";
@@ -33,9 +33,9 @@ function App() {
         <Route path="/publish">
           <Publish />
         </Route>
-        {/* <Route path="/editrecipe">
+        <Route path="/editrecipe">
           <Editrecipe />
-        </Route> */}
+        </Route>
       </BrowserRouter>
   );
 }

@@ -48,7 +48,7 @@ function Publish() {
         }
   };
   return (
-    <div className="container bg-light card p-2 mt-2">
+    <div className="container bg-light card p-2" style={{marginTop:'4.5rem'}}>
     <div className="row recipeHeader">
         <div className="col">
             <h3>Publish Your Recipe</h3>

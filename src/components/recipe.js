@@ -62,16 +62,16 @@ class Recipe extends React.Component {
       })
       return (
       <>
-        <div className="container bg-light card p-2 my-4">
+        <div className="container bg-light card p-2" style={{marginTop:'4.5rem'}}>
           <div className="row recipeHeader">
             <div className="col">
               <h3>{Thisrecipe.result.label}</h3>
             </div>
             <div className="col home-button">
               <Deletebtn />
-              <button className="btn mx-1 btn-sm float-right btn-info" >
+              <Link className="btn mx-1 btn-sm float-right btn-info" to="/editrecipe" >
                 <i className="fa fa-edit"></i>
-              </button>
+              </Link>
               <Link className="btn mx-1 btn-sm float-right btn-info" to="/">
                 <i className="fa fa-arrow-left"></i> Back to Home
               </Link>

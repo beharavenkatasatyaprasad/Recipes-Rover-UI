@@ -2,7 +2,7 @@ import React from 'react';
 
 function Topnav(){
     return (
-        <div className="navbar p-1 shadow justify-content-center">
+        <div className="navbar fixed-top p-1 shadow justify-content-center">
             <h1>Recipes Rover</h1>
         </div>
       );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Networkerror from "./networkerror";
 import { PassThrouthLoading } from "react-loadingg";
 
 class recipe extends React.Component {
@@ -37,7 +37,11 @@ class recipe extends React.Component {
     const { error, isLoaded, recipes } = this.state;
     const recipesArray = recipes.result;
     if (error) {
-      return <div className="col text-center">Error: {error.message}</div>;
+      return (
+        <div className="container-fluid">
+          <Networkerror />
+        </div>
+      );
     } else if (!isLoaded) {
       return (
         <div className="container-fluid text-center">
@@ -77,7 +81,7 @@ class recipe extends React.Component {
           className="container-fluid"
           style={{ paddingLeft: "25px", paddingRight: "25px" }}
         >
-          <div className="row p-0 m-0 mt-3 justify-content-center">{cards}</div>
+          <div className="row p-0 m-0 mt-3 editrecipe justify-content-center">{cards}</div>
         </div>
       );
     }

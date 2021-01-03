@@ -2,7 +2,7 @@ import React from "react";
 
 function searchField() {
   return (
-    <div className="bg-img justify-content-center">
+    <div className="bg-img justify-content-center" style={{marginTop:'4rem'}}>
       <form>
         <div className="input-fields d-flex justify-content-center">
           <div className="col-sm-8 col-lg-6">
