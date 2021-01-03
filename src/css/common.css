@@ -19,9 +19,11 @@ body {
   box-sizing: border-box;
   background-color: hsl(208, 100%, 97%);
 }
+
 .ScrollUpButton__Container {
   position: fixed;
-  right: -17px !important;
+  right: -17.5px !important;
+  bottom: 18px !important;
   transition: 0.5s;
   background-image: linear-gradient(
     to right,
@@ -41,8 +43,6 @@ body {
 .ScrollUpButton__Container span{
   font-family: "Redressed", cursive;
   font-size: 21px !important;
-
-
 }
 
 .navbar {
@@ -95,7 +95,7 @@ body {
 
 
 .input-fields {
-  background-color: rgba(0, 0, 0, 0.73);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 76.8px 0%;
 }
 
@@ -188,6 +188,7 @@ body {
 .publish-btn {
   position: fixed;
   rotate: 90deg;
+  transform: rotate(90deg);
   top: 142px;
   left: -60px;
   z-index: 999;
@@ -295,6 +296,7 @@ ol li:before {
     top: inherit;
     left: -2px;
     rotate: 0deg;
+    transform: rotate(0deg);
     font-size: 100%;
     letter-spacing: 0.5px;
   }

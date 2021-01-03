@@ -1,13 +1,10 @@
 import React from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import { BrowserRouter, Route } from 'react-router-dom';
 import Topnav from "./components/topnav";
 import Searchfield from "./components/searchfield";
 import CardGroup from "./components/recipecard";
 import Recipedeleted from "./components/deleted";
 import Editrecipe from "./components/editinprogress";
-
-
 import Publish from "./components/publishmodal";
 import PublishBtn from "./components/publishtab-btn";
 import {VerticleButton as ScrollUpButton} from "react-scroll-up-button";
