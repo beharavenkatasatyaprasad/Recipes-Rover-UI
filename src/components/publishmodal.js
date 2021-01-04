@@ -176,7 +176,7 @@ function Publish() {
 async function publish(
     recipelabel,
     image,
-   calories,
+    calories,
     serves,
     ingredients,
     instructions,
@@ -189,47 +189,47 @@ async function publish(
     Meal,
     timetaken
 ) {
-  let formdata = {
-    publisher: publisher,
-    image: image,
-    label: recipelabel,
-    ingredients: ingredients,
-    instructions: instructions,
-    calories: calories,
-    serves: serves,
-    difficulty: Difficulty,
-    cost: Cost,
-    onepotmeal: onepotmeal,
-    occasion: Occasion,
-    tastetexture: taste,
-    meal: Meal,
-    timetaken: timetaken
-  };
-  let conn_status = true;
-  toast.info("Please wait..",{
-    position: toast.POSITION.TOP_RIGHT
-    });
-  let data = await fetch("https://recipesrover.herokuapp.com/publish", {
-    method: "POST",
-    body: JSON.stringify(formdata),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).catch((error) => {
-    toast.danger(error)
-    conn_status = false;
-  });
-  if (!conn_status) return;
-  if (data.status !== 201) {
-    toast.error("something went wrong, Please tryagain",{
+    let formdata = {
+        publisher: publisher,
+        image: image,
+        label: recipelabel,
+        ingredients: ingredients,
+        instructions: instructions,
+        calories: calories,
+        serves: serves,
+        difficulty: Difficulty,
+        cost: Cost,
+        onepotmeal: onepotmeal,
+        occasion: Occasion,
+        tastetexture: taste,
+        meal: Meal,
+        timetaken: timetaken
+    };
+    let conn_status = true;
+    toast.info("Please wait..", {
         position: toast.POSITION.TOP_RIGHT
     });
-    return;
-  }
-//   alert();
-  toast.success(recipelabel + " successfully published",{
-    position: toast.POSITION.TOP_RIGHT
-})
+    let data = await fetch("https://recipesrover.herokuapp.com/publish", {
+        method: "POST",
+        body: JSON.stringify(formdata),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }).catch((error) => {
+        toast.danger(error)
+        conn_status = false;
+    });
+    if (!conn_status) return;
+    if (data.status !== 201) {
+        toast.error("something went wrong, Please tryagain", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        return;
+    }
+    //   alert();
+    toast.success(recipelabel + " successfully published", {
+        position: toast.POSITION.TOP_RIGHT
+    })
 }
 
 export default Publish;

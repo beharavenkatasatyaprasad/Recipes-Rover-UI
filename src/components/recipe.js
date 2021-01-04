@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import Deletebtn from "./deletebtn";
+// import Deletebtn from "./deletebtn";
 import { PassThrouthLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
 
@@ -47,7 +47,6 @@ class Recipe extends React.Component {
       );
     }else{
       localStorage.setItem("thisrecipeName", Thisrecipe.result.label); 
-      localStorage.setItem("thisrecipeId", Thisrecipe.result._id); 
       let ingreds = Thisrecipe.result.ingredients
       let steps = Thisrecipe.result.instructions
       const ingredslist = ingreds.map((item,pos) => {
@@ -60,6 +59,9 @@ class Recipe extends React.Component {
           <li key={pos}>{item}</li>
         );
       })
+      const recipeid = this.props.match.params.id
+      const editendpoint = "/editrecipe/"+recipeid; 
+      const deleteendpoint = "/deleterecipe/"+recipeid; 
       return (
       <>
         <div className="container bg-light card p-2" style={{marginTop:'4.5rem'}}>
@@ -68,11 +70,13 @@ class Recipe extends React.Component {
               <h3>{Thisrecipe.result.label}</h3>
             </div>
             <div className="col home-button">
-              <Deletebtn />
-              <Link className="btn mx-1 btn-sm float-right btn-info" to="/editrecipe" >
+              <Link to={deleteendpoint} className="btn mx-1 btn-sm float-right btn-info">
+                <i className="fa fa-trash"></i>
+              </Link>
+              <Link className="btn mx-1 btn-sm float-right btn-info"to={editendpoint} >
                 <i className="fa fa-edit"></i>
               </Link>
-              <Link className="btn mx-1 btn-sm float-right btn-info" to="/">
+              <Link className="btn mx-1 btn-sm float-right btn-info"  to="/"   >
                 <i className="fa fa-arrow-left"></i> Back to Home
               </Link>
             </div>
