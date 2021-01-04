@@ -1,41 +1,36 @@
 import React from "react";
 
 class searchField extends React.Component{
-    constructor(props) {
-      super(props);
-      this.query = React.createRef();
+  constructor(props) {
+    super(props);
+    this.state = {
+      Query:''
+    };
   }
-  handleSubmit(e) {
-    e.preventDefault();
-    const query = this.query.current.value;
-    if(query){
-      resArr = this.props.recipesArray;
-      resArr.forEach(name => {
-      if (name.innerText.toLowerCase().includes(query.toLowerCase())) {
-        console.log(name)
-      } else {
-        console.log(name)
-      }   
-      })
-    }}
+  handleQueryChange = (e) => {
+    this.setState({Query: e.target.value});
+  }
+  handleSearch = () =>{
+    localStorage.setItem('query',this.state.Query);
+  }
   render(){
     return (
       <div className="bg-img justify-content-center" style={{marginTop:'4rem'}}>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <div className="input-fields d-flex justify-content-center">
             <div className="col-sm-8 col-lg-6">
               <div className="input-container input-group">
                 <input
                   type="text"
-                  id="searchQuery"
-                  defaultValue='' 
-                  ref={this.query}
+                  onChange={this.handleQueryChange}
+                  name='Query'
+                  value={this.state.Query}
                   className="form-control form-control-lg"
                   placeholder="Search for a Recipe"
                 />
                 <button
                   type="button"
-                  id="SearchBtn"
+                  onClick={this.handleSearch}
                   className="btn input-group-append search-btn btn-lg btn-grad"
                 >
                   Search
