@@ -1,21 +1,24 @@
 import React from "react";
 
-class searchField extends React.Component{
+class searchField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Query:''
+      Query: "",
     };
   }
   handleQueryChange = (e) => {
-    this.setState({Query: e.target.value});
-  }
-  handleSearch = () =>{
-    localStorage.setItem('query',this.state.Query);
-  }
-  render(){
+    this.setState({ Query: e.target.value });
+  };
+  handleSearch = () => {
+    localStorage.setItem("query", this.state.Query);
+  };
+  render() {
     return (
-      <div className="bg-img justify-content-center" style={{marginTop:'4rem'}}>
+      <div
+        className="bg-img justify-content-center"
+        style={{ marginTop: "4rem" }}
+      >
         <form>
           <div className="input-fields d-flex justify-content-center">
             <div className="col-sm-8 col-lg-6">
@@ -23,7 +26,7 @@ class searchField extends React.Component{
                 <input
                   type="text"
                   onChange={this.handleQueryChange}
-                  name='Query'
+                  name="Query"
                   value={this.state.Query}
                   className="form-control form-control-lg"
                   placeholder="Search for a Recipe"
@@ -42,7 +45,6 @@ class searchField extends React.Component{
       </div>
     );
   }
-  
 }
 
 export default searchField;

@@ -8,15 +8,15 @@ class recipe extends React.Component {
       error: null,
       isLoaded: false,
       recipes: [],
-      Query:''
+      Query: "",
     };
   }
   handleQueryChange = (e) => {
-    this.setState({Query: e.target.value});
-  }
-  handleSearch = () =>{
+    this.setState({ Query: e.target.value });
+  };
+  handleSearch = () => {
     console.log(this.state.Query);
-  }
+  };
   componentDidMount() {
     fetch("https://recipesrover.herokuapp.com/recipes")
       .then((res) => res.json())
@@ -39,14 +39,16 @@ class recipe extends React.Component {
   render() {
     const { error, isLoaded, recipes } = this.state;
     const recipesArray = recipes.result;
-    return(
+    return (
       <div>
-        <Recipesdata error={error} isLoaded={isLoaded} recipesArray = {recipesArray} />
+        <Recipesdata
+          error={error}
+          isLoaded={isLoaded}
+          recipesArray={recipesArray}
+        />
       </div>
-    )
-    }
-
-      
+    );
+  }
 }
 
 export default recipe;

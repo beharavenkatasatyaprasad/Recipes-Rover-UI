@@ -5,7 +5,7 @@ function publishbtn() {
   return (
     <Link
       type="button"
-      to='/publish'
+      to="/publish"
       data-target=".registermodal-modal-xl"
       className="btn input-group-append publish-btn btn-md"
     >

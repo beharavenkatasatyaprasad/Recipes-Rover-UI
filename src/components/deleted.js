@@ -24,25 +24,24 @@ class deleterecipe extends React.Component {
       body: JSON.stringify({
         id: id,
       }),
-    })
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            Thisrecipe: result,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+    }).then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          Thisrecipe: result,
+        });
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error,
+        });
+      }
+    );
   }
 
   render() {
-    const { error, isLoaded  } = this.state;
+    const { error, isLoaded } = this.state;
     if (error) {
       return <div className="col text-center">Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -51,21 +50,31 @@ class deleterecipe extends React.Component {
           <PassThrouthLoading />
         </div>
       );
-    }else{
-    const recipename = localStorage.getItem('thisrecipeName')
+    } else {
+      const recipename = localStorage.getItem("thisrecipeName");
       return (
         <>
-          <div className="container bg-light col-sm-8 p-0" style={{marginTop:'11rem'}}>
-                <div className="card">
-                <div className="recipeHeader">
-                <Link className="btn mx-1 btn-sm m-2 float-right btn-info" to="/">
-                    <i className="fa fa-arrow-left"></i> Back to Home
-                  </Link>
+          <div
+            className="container bg-light col-sm-8 p-0"
+            style={{ marginTop: "11rem" }}
+          >
+            <div className="card">
+              <div className="recipeHeader">
+                <Link
+                  className="btn mx-1 btn-sm m-2 float-right btn-info"
+                  to="/"
+                >
+                  <i className="fa fa-arrow-left"></i> Back to Home
+                </Link>
               </div>
               <div className="row">
                 <div className="col-sm-10 pt-1 mt-3 mb-2 text-center col-md-6 col-lg-6 side-content">
-                  <h3 style={{padding:'10%'}}>
-                    <span style={{fontFamily: 'Redressed', fontSize:'160%'}}>{recipename}</span><br/>successfully deleted..
+                  <h3 style={{ padding: "10%" }}>
+                    <span style={{ fontFamily: "Redressed", fontSize: "160%" }}>
+                      {recipename}
+                    </span>
+                    <br />
+                    successfully deleted..
                   </h3>
                 </div>
                 <div className="col-sm-12 my-2 col-md-6 col-lg-6 side-content-img">
@@ -79,6 +88,5 @@ class deleterecipe extends React.Component {
     }
   }
 }
-
 
 export default withRouter(deleterecipe);
