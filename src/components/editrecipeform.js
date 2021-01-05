@@ -187,9 +187,9 @@ class editrecipeform extends React.Component {
                 >
                   <option defaultValue>select one</option>
                   <option value="breakfast">breakfast</option>
-                  <option value="lunch">lunch</option>
                   <option value="snacks">snacks</option>
-                  <option value="dinner">dinner</option>
+                  {/* <option value="6">lunch</option> */}
+                  <option value="Lunch or Dinner">Lunch / Dinner</option>
                 </select>
               </div>
               <div className="col-sm-12 col-md-12 col-lg-6 form-group">
