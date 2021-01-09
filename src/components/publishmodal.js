@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -302,4 +303,4 @@ async function publish(
   });
 }
 
-export default Publish;
+export default withRouter(Publish);

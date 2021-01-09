@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router";
-// import Deletebtn from "./deletebtn";
 import { PassThrouthLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
 
